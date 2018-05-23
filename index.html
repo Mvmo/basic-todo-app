@@ -1,53 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Todo App</title>
-
-  <style>
-    li, button {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .done {
-      text-decoration: line-through;
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Todo App</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
-  <h1>My Simple Todo App</h1>
+<i class="fas fa-plus" onclick="openForm()" id="btn-open-form"></i>
+<section id="new-todo" style="display:none">
+    <i class="fas fa-times" onclick="closeForm()" id="btn-close-form"></i>
+    <form>
+        <h1>My Simple Todo App</h1>
+        <input id="item-input" type="text" name="item"/><br />
+        <button type="submit">Submit</button>
+    </form>
+</section>
 
-  <form>
-    <input id="item-input" type="text" name="item"/>
-    <button type="submit">Submit</button>
-  </form>
-
-  <ul id="list"></ul>
-
-  <script>
-    const form = document.querySelector('form');
-    const list = document.querySelector('#list');
-
-    form.onsubmit = e => {
-      e.preventDefault();
-      const input = document.querySelector('#item-input');
-
-      list.innerHTML += '<li>' + input.value + ' <button class="delete">delete</button></li>';
-      input.value = '';
-    };
-
-    list.onclick = e => {
-      if (e.target !== e.currentTarget && e.target.nodeName === "BUTTON") {
-        e.target.parentElement.remove();
-      }
-
-      if (e.target !== e.currentTarget && e.target.nodeName === "LI") {
-        e.target.classList.toggle('done');
-      }
-    }
-  </script>
+<ul id="list"></ul>
 </body>
+<script src="js/script.js"></script>
 </html>

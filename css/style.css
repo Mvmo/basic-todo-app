@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+section#new-todo {
+    top: 0;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+form input[type="text"] {
+    border: solid black 1px;
+    margin: 5px;
+    width: 300px;
+    padding: 5px 0 5px 0;
+}
+
+form button[type="submit"] {
+    width: 300px;
+    padding: 5px;
+    border: solid #212121 1px;
+    background: deepskyblue;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    transition: ease-in-out 300ms;
+}
+
+form button[type="submit"]:hover {
+    background: #007da9;
+}
+
+li, button {
+    cursor: pointer;
+    user-select: none;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+#btn-open-form {
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    background: greenyellow;
+    padding: 15px;
+    color: white;
+    border-radius: 100%;
+}
+
+#btn-close-form {
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    background: red;
+    padding: 15px;
+    color: white;
+    border-radius: 100%;
+}
